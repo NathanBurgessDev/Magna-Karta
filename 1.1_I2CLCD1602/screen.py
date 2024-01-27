@@ -12,7 +12,7 @@ def loop():
         # lcd.clear()
         lcd.setCursor(0,0)  # set cursor position
         lcd.message(text) # display Magna Carta
-        sleep(1)
+        sleep(3)
 
 def destroy():
     lcd.clear()
