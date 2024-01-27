@@ -2,17 +2,26 @@ from PCF8574 import PCF8574_GPIO
 from Adafruit_LCD1602 import Adafruit_CharLCD
 from time import sleep
 
-with open("../assets/magna-carta.txt", "r") as f:
-    text = f.read()
+
 
 def loop():
     mcp.output(3,1)     # turn on LCD backlight
     lcd.begin(16,2)     # set number of LCD lines and columns
-    while(True):         
-        # lcd.clear()
-        lcd.setCursor(0,0)  # set cursor position
-        lcd.message(text) # display Magna Carta
-        sleep(10)
+
+    with open("../assets/magna-carta.txt", "r") as f:
+        for line in f:
+            words = line.split(" ")
+            for word in words:     
+                lcd.clear()
+                lcd.cursor(0,0)
+                lcd.message(word)
+                sleep(1)
+
+    # while(True):         
+    #     # lcd.clear()
+    #     lcd.setCursor(0,0)  # set cursor position
+    #     lcd.message(text) # display Magna Carta
+    #     sleep(10)
 
 def destroy():
     lcd.clear()
