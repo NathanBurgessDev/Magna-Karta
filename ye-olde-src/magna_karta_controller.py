@@ -3,8 +3,8 @@ from gpiozero import Robot
 class MagnaKartaController:
     
     def __init__(self, speed: float) -> None:
-        self.back = Robot(left=(22, 23), right=(9, 25))
-        self.front = Robot(left=(26, 13), right=(20, 21))
+        self.back = Robot(left=(9, 25), right=(22, 23))
+        self.front = Robot(left=(20, 21), right=(26, 13))
         self.speed = speed
 
     def forward(self):
