@@ -13,7 +13,7 @@ def loop():
             words = line.split(" ")
             for word in words:     
                 lcd.clear()
-                lcd.cursor(0,0)
+                lcd.setCursor(0,0)
                 lcd.message(word)
                 sleep(1)
 
