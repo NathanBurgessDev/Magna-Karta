@@ -13,14 +13,26 @@ from sensor import SensorController
 #         self.motor.backward(speed)
 
 def main():
-    car = Robot(left=(8, 7), right=(0, 3))
+    car = Robot(left=(22, 23), right=(9, 25))
     sensor_controller = SensorController(
-        in_range_cb=print("stopped"),
-        out_of_range_cb=car.forward(0.5)
+        in_range_cb=printstop,
+        out_of_range_cb=movecar
     )
-
+    
 def avoid_collision(speed: float):
     pass
 
-if __name__ == "main":
+def printstop():
+    print("stopped")
+
+def movecar():
+    car.forward(0.5)
+
+if __name__ == "__main__":
     main()
+
+while True:
+    try:
+        continue
+    except KeyboardInterrupt:
+        print("Ending program")
