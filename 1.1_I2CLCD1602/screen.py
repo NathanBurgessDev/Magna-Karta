@@ -7,7 +7,7 @@ with open("../assets/magna-carta.txt", "r") as f:
 
 def loop():
     mcp.output(3,1)     # turn on LCD backlight
-    lcd.begin(16,2)     # set number of LCD lines and columns
+    lcd.begin(16,1)     # set number of LCD lines and columns
     while(True):         
         # lcd.clear()
         lcd.setCursor(0,0)  # set cursor position
