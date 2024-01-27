@@ -1,5 +1,8 @@
 from gpiozero import Robot
 from sensor import SensorController
+from gpiozero import DistanceSensor
+
+from signal import pause
 
 # class MotorController:
 
@@ -13,12 +16,16 @@ from sensor import SensorController
 #         self.motor.backward(speed)
 
 def main():
-    car = Robot(left=(22, 23), right=(9, 25))
-    sensor_controller = SensorController(
-        in_range_cb=printstop,
-        out_of_range_cb=movecar
-    )
+    sensor = DistanceSensor(echo=18, trigger=4, threshold_distance=0.2 )
     
+    
+    #sensor_controller = SensorController(
+      #  in_range_cb=printstop,
+     #   out_of_range_cb=movecar
+    #)
+    sensor.when_in_range = printstop
+    sensor.when_out_of_range= movecar
+    pause()
 def avoid_collision(speed: float):
     pass
 
@@ -26,7 +33,9 @@ def printstop():
     print("stopped")
 
 def movecar():
-    car.forward(0.5)
+    global car
+    print("car")
+    
 
 if __name__ == "__main__":
     main()
