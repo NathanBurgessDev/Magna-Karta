@@ -10,11 +10,6 @@ sensor = DistanceSensor(echo=10, trigger=25, threshold_distance=0.2)
 
 def main():
 
-    listen_keyboard(
-        on_press=on_press,
-        on_release=on_release
-    )
-
     PCF8574_address = 0x27  # I2C address of the PCF8574 chip.
     PCF8574A_address = 0x3F  # I2C address of the PCF8574A chip.
     # Create PCF8574 GPIO adapter.
@@ -37,6 +32,11 @@ def main():
             lcd.setCursor(0,0)
             lcd.message(line)
             sleep(1)
+
+    listen_keyboard(
+        on_press=on_press,
+        on_release=on_release
+    )
 
 def on_press(key):
     if key == 'w':
