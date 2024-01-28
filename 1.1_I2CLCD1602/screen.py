@@ -9,13 +9,20 @@ def loop():
     lcd.begin(16,2)     # set number of LCD lines and columns
 
     with open("../assets/magna-carta.txt", "r") as f:
-        for line in f:
-            words = line.split(" ")
-            for word in words:     
-                lcd.clear()
-                lcd.setCursor(0,0)
-                lcd.message(word)
-                sleep(1)
+        # for line in f:
+        #     words = line.split(" ")
+        #     for word in words:     
+        #         lcd.clear()
+        #         lcd.setCursor(0,0)
+        #         lcd.message(word)
+        #         sleep(1)
+        text = f.read()
+        for i in range(0, len(text), 16):
+            line = text[i::i+15]
+            lcd.clear()
+            lcd.setCursor(0,0)
+            lcd.message(line)
+            sleep(1)
 
     # while(True):         
     #     # lcd.clear()
