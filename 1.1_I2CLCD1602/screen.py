@@ -18,7 +18,7 @@ def loop():
         #         sleep(1)
         text = f.read()
         for i in range(0, len(text), 16):
-            line = text[i:i+15]
+            line = text[i:i+16]
             lcd.clear()
             lcd.setCursor(0,0)
             lcd.message(line)
