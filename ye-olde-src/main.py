@@ -1,5 +1,7 @@
 from gpiozero import DistanceSensor
 from magna_karta_controller import MagnaKartaController
+from screen.PCF8574 import PCF8574_GPIO
+from screen.Adafruit_LCD1602 import Adafruit_CharLCD
 from sshkeyboard import listen_keyboard
 from time import sleep
 
@@ -12,6 +14,29 @@ def main():
         on_press=on_press,
         on_release=on_release
     )
+
+    PCF8574_address = 0x27  # I2C address of the PCF8574 chip.
+    PCF8574A_address = 0x3F  # I2C address of the PCF8574A chip.
+    # Create PCF8574 GPIO adapter.
+    try:
+        mcp = PCF8574_GPIO(PCF8574_address)
+    except:
+        try:
+            mcp = PCF8574_GPIO(PCF8574A_address)
+        except:
+            print ('I2C Address Error !')
+            exit(1)
+    
+    lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4,5,6,7], GPIO=mcp)
+
+    with open("../assets/magna-carta.txt", "r") as f:
+        text = f.read()
+        for i in range(0, len(text), 16):
+            line = text[i:i+16]
+            lcd.clear()
+            lcd.setCursor(0,0)
+            lcd.message(line)
+            sleep(1)
 
 def on_press(key):
     if key == 'w':
