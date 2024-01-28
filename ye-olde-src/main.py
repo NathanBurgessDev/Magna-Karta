@@ -11,7 +11,8 @@ def main():
     # )
     # pause()
     while True:
-        match input():
+        key = input()
+        match key:
             case 'w':
                 magna_karta.forward()
             case 's':
