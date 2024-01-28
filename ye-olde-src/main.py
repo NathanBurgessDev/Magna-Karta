@@ -15,6 +15,7 @@ def main():
         key = input()
         try:
             if keyboard.is_pressed('w'):
+                print("forward")
                 magna_karta.forward()
             elif keyboard.is_pressed('s'):
                 magna_karta.backward()
