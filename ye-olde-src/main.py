@@ -11,7 +11,7 @@ def main():
     # )
     # pause()
     
-    magna_karta.backward()
+    magna_karta.right()
 
 def avoid_collision():
     global magna_karta
