@@ -19,10 +19,8 @@ class MagnaKartaController:
 
 
     def left(self):
-        # self.back.left(self.speed)
-        # self.front.left(self.speed)
-        self.back.forward(self.speed)
-        self.front.forward(self.speed, curve_left=1)
+        self.back.left(self.speed)
+        self.front.left(self.speed)
 
     
     def right(self):
