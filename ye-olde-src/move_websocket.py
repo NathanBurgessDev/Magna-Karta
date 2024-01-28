@@ -19,7 +19,7 @@ async def echo(websocket):
         x -= 1
         y -= 1
 
-        if x > y:
+        if abs(x) > abs(y):
             if x < 0:
                 controller.left()
             else:
