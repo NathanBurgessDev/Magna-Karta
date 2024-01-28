@@ -16,7 +16,7 @@ def main():
 def on_press(key):
     if key == 'w':
         print(sensor.distance * 100)
-        if sensor.distance * 100 > 20:
+        if sensor.distance * 100 > 40:
             magna_karta.forward()
         else:
             magna_karta.stop()
