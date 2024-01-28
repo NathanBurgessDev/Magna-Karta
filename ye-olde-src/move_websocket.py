@@ -16,13 +16,16 @@ async def echo(websocket):
         x = float(x_str)
         y = float(y_str)
 
+        x -= 1
+        y -= 1
+
         if x > y:
-            if x < 0.5:
+            if x < 0:
                 controller.left()
             else:
                 controller.right()
         else:
-            if y < 0.5:
+            if y < 0:
                 controller.forward()
             else:
                 controller.backward()
