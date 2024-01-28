@@ -19,7 +19,7 @@ def avoid_collision():
 
 def forward():
     global magna_karta
-    magna_karta.forward()
+    magna_karta.left()
 
 if __name__ == "__main__":
     main()
