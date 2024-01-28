@@ -11,7 +11,7 @@ def main():
     # )
     # pause()
     
-    magna_karta.forward()
+    magna_karta.left()
 
 def avoid_collision():
     global magna_karta
@@ -19,7 +19,7 @@ def avoid_collision():
 
 def forward():
     global magna_karta
-    magna_karta.left()
+    magna_karta.forward()
 
 if __name__ == "__main__":
     main()
