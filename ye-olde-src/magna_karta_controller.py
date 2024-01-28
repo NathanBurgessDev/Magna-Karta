@@ -10,7 +10,7 @@ class MagnaKartaController:
 
     def forward(self):
         self.back.forward(self.speed)
-        self.front.forward(self.speed, curve_right=1)
+        self.front.forward(self.speed, curve_right=0.5)
 
 
     def backward(self):
