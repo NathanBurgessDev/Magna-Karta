@@ -5,11 +5,12 @@ from signal import pause
 magna_karta = MagnaKartaController(speed=0.5)
 
 def main():
-    sensor_controller = SensorController(
-       in_range_cb=avoid_collision,
-       out_of_range_cb=forward
-    )
-    pause()
+    # sensor_controller = SensorController(
+    #    in_range_cb=avoid_collision,
+    #    out_of_range_cb=forward
+    # )
+    # pause()
+    magna_karta.forward()
 
 def avoid_collision():
     global magna_karta
