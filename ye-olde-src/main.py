@@ -1,7 +1,7 @@
 from sensor import SensorController
 from magna_karta_controller import MagnaKartaController
 from signal import pause
-from pynput.keyboard import Listener
+from sshkeyboard import listen_keyboard
 from time import sleep
 
 magna_karta = MagnaKartaController(speed=1)
@@ -13,29 +13,25 @@ def main():
     # )
     # pause()
 
-    with Listener(on_press, on_release) as listener:
-        listener.join()
-
-    # while True:
-        # try:
-
-        # except:
-        #     continue
+    listen_keyboard(
+        on_press=on_press,
+        on_release=on_release
+    )
 
 def on_press(key):
-    if key.char == 'w':
+    if key == 'w':
         sleep(0.1)
         magna_karta.forward()
-    elif key.char == 's':
+    elif key == 's':
         sleep(0.1)
         magna_karta.backward()
-    elif key.char == 'a':
+    elif key == 'a':
         sleep(0.1)
         magna_karta.left()
-    elif key.char == 'd':
+    elif key == 'd':
         sleep(0.1)
         magna_karta.right()
-    elif key.char == 'q':
+    elif key == 'q':
         sleep(0.1)
         magna_karta.front.close()
         magna_karta.back.close()
