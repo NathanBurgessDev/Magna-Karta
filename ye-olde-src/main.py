@@ -1,6 +1,7 @@
 from sensor import SensorController
 from magna_karta_controller import MagnaKartaController
 from signal import pause
+import keyboard
 
 magna_karta = MagnaKartaController(speed=1)
 
@@ -12,15 +13,15 @@ def main():
     # pause()
     while True:
         key = input()
-        if key == 'w':
+        if keyboard.is_pressed('w'):
             magna_karta.forward()
-        elif key == 's':
+        elif keyboard.is_pressed('s'):
             magna_karta.backward()
-        elif key == 'a':
+        elif keyboard.is_pressed('a'):
             magna_karta.left()
-        elif key == 'd':
+        elif keyboard.is_pressed('d'):
             magna_karta.right()
-        elif key ==  'q':
+        elif keyboard.is_pressed('q'):
             magna_karta.front.close()
             magna_karta.back.close()
             quit()
