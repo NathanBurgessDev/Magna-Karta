@@ -2,7 +2,7 @@ from sensor import SensorController
 from magna_karta_controller import MagnaKartaController
 from signal import pause
 
-magna_karta = MagnaKartaController(speed=0.5)
+magna_karta = MagnaKartaController(speed=1)
 
 def main():
     # sensor_controller = SensorController(
