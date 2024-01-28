@@ -25,6 +25,8 @@ def main():
                 magna_karta.front.close()
                 magna_karta.back.close()
                 quit()
+            case _:
+                continue
 
 def avoid_collision():
     global magna_karta
