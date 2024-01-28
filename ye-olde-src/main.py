@@ -13,7 +13,7 @@ def main():
     # )
     # pause()
     while True:
-        try:
+        # try:
             if keyboard.is_pressed('w'):
                 keyboard.release('w')
                 sleep(0.1)
@@ -36,8 +36,8 @@ def main():
                 magna_karta.front.close()
                 magna_karta.back.close()
                 quit()
-        except:
-            continue
+        # except:
+        #     continue
 
 def avoid_collision():
     global magna_karta
