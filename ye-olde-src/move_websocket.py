@@ -11,6 +11,7 @@ async def echo(websocket):
 
         x = float(x_str)
         y = float(y_str)
+        
 
         if y > 0.5:
             controller.forward()

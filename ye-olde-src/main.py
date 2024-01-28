@@ -10,8 +10,20 @@ def main():
     #    out_of_range_cb=forward
     # )
     # pause()
-    
-    magna_karta.right()
+    while True:
+        match input():
+            case 'w':
+                magna_karta.forward()
+            case 's':
+                magna_karta.backward()
+            case 'a':
+                magna_karta.left()
+            case 'd':
+                magna_karta.right()
+            case 'q':
+                magna_karta.front.close()
+                magna_karta.back.close()
+                quit()
 
 def avoid_collision():
     global magna_karta
@@ -24,8 +36,8 @@ def forward():
 if __name__ == "__main__":
     main()
     
-while True:
-    try:
-        continue
-    except KeyboardInterrupt:
-        print("Ending program")
+# while True:
+#     try:
+#         continue
+#     except KeyboardInterrupt:
+#         print("Ending program")
