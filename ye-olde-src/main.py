@@ -1,7 +1,7 @@
 from gpiozero import DistanceSensor
 from magna_karta_controller import MagnaKartaController
-from screen.PCF8574 import PCF8574_GPIO
-from screen.Adafruit_LCD1602 import Adafruit_CharLCD
+from PCF8574 import PCF8574_GPIO
+from Adafruit_LCD1602 import Adafruit_CharLCD
 from sshkeyboard import listen_keyboard
 from time import sleep
 
