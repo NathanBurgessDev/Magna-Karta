@@ -15,8 +15,8 @@ def main():
 
 def on_press(key):
     if key == 'w':
-        sensor.wait_for_inactive()
-        magna_karta.forward()
+        if sensor.distance * 100 > 10:
+            magna_karta.forward()
     elif key == 's':
         magna_karta.backward()
     elif key == 'a':
