@@ -1,45 +1,29 @@
-from gpiozero import Robot
 from sensor import SensorController
-from gpiozero import DistanceSensor
-
+from magna_karta_controller import MagnaKartaController
 from signal import pause
 
-# class MotorController:
-
-#     def __init__(self) -> None:
-#         self.motor = Motor(forward=2, backward=12)
-
-#     def forward(self, speed: int) -> None:
-#         self.motor.forward(speed)
-
-#     def backward(self, speed: int) -> None:
-#         self.motor.backward(speed)
+magna_karta = MagnaKartaController(speed=0.5)
 
 def main():
-    sensor = DistanceSensor(echo=18, trigger=4, threshold_distance=0.2 )
+    # sensor_controller = SensorController(
+    #    in_range_cb=avoid_collision,
+    #    out_of_range_cb=forward
+    # )
+    # pause()
     
-    
-    #sensor_controller = SensorController(
-      #  in_range_cb=printstop,
-     #   out_of_range_cb=movecar
-    #)
-    sensor.when_in_range = printstop
-    sensor.when_out_of_range= movecar
-    pause()
-def avoid_collision(speed: float):
-    pass
+    magna_karta.right()
 
-def printstop():
-    print("stopped")
+def avoid_collision():
+    global magna_karta
+    magna_karta.left()
 
-def movecar():
-    global car
-    print("car")
-    
+def forward():
+    global magna_karta
+    magna_karta.forward()
 
 if __name__ == "__main__":
     main()
-
+    
 while True:
     try:
         continue

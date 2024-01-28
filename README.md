@@ -11,7 +11,10 @@ Have you ever wanted a small autonomous buggy to remind you of one of the most s
 
 ## Features
 
-- Autonomous movement and object detection
+- AI and machine learning based autonomous movement and object detection software suite
 - Magna Carta displayed in Morse code AND on an LCD screen
 - Native Swift app (to allow control of the car)
 - Expertly designed Flask backend for integration with client applications
+
+_"Individuals and interactions over processes and tools"_
+
