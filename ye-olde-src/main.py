@@ -18,6 +18,8 @@ def on_press(key):
         print(sensor.distance * 100)
         if sensor.distance * 100 > 10:
             magna_karta.forward()
+        else:
+            magna_karta.stop()
     elif key == 's':
         magna_karta.backward()
     elif key == 'a':
