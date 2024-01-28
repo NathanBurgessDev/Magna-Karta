@@ -11,12 +11,17 @@ async def echo(websocket):
 
         x = float(x_str)
         y = float(y_str)
-        
 
-        if y > 0.5:
-            controller.forward()
+        if x > y:
+            if x < 0.5:
+                controller.left()
+            else:
+                controller.right()
         else:
-            controller.backward()
+            if y < 0.5:
+                controller.forward()
+            else:
+                controller.backward()
 
 
 async def main():
