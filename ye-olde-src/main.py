@@ -1,17 +1,12 @@
-from sensor import SensorController
+from gpiozero import DistanceSensor
 from magna_karta_controller import MagnaKartaController
-from signal import pause
 from sshkeyboard import listen_keyboard
 from time import sleep
 
 magna_karta = MagnaKartaController(speed=1)
+sensor = DistanceSensor(echo=10, trigger=25, threshold_distance=0.2)
 
 def main():
-    # sensor_controller = SensorController(
-    #    in_range_cb=avoid_collision,
-    #    out_of_range_cb=forward
-    # )
-    # pause()
 
     listen_keyboard(
         on_press=on_press,
@@ -20,6 +15,7 @@ def main():
 
 def on_press(key):
     if key == 'w':
+        sensor.wait_for_inactive()
         magna_karta.forward()
     elif key == 's':
         magna_karta.backward()
