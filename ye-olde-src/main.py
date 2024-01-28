@@ -13,19 +13,20 @@ def main():
     # pause()
     while True:
         key = input()
-        if keyboard.is_pressed('w'):
-            magna_karta.forward()
-        elif keyboard.is_pressed('s'):
-            magna_karta.backward()
-        elif keyboard.is_pressed('a'):
-            magna_karta.left()
-        elif keyboard.is_pressed('d'):
-            magna_karta.right()
-        elif keyboard.is_pressed('q'):
-            magna_karta.front.close()
-            magna_karta.back.close()
-            quit()
-        else:
+        try:
+            if keyboard.is_pressed('w'):
+                magna_karta.forward()
+            elif keyboard.is_pressed('s'):
+                magna_karta.backward()
+            elif keyboard.is_pressed('a'):
+                magna_karta.left()
+            elif keyboard.is_pressed('d'):
+                magna_karta.right()
+            elif keyboard.is_pressed('q'):
+                magna_karta.front.close()
+                magna_karta.back.close()
+                quit()
+        except:
             continue
 
 def avoid_collision():
