@@ -29,7 +29,7 @@ async def echo(websocket):
 
 
 async def main():
-    async with serve(echo, "localhost", 8765):
+    async with serve(echo, "0.0.0.0", 8765):
         await asyncio.Future()
 
 
