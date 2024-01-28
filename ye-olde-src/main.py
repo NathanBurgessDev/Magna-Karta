@@ -10,33 +10,33 @@ sensor = DistanceSensor(echo=10, trigger=25, threshold_distance=0.2)
 
 def main():
 
-    PCF8574_address = 0x27  # I2C address of the PCF8574 chip.
-    PCF8574A_address = 0x3F  # I2C address of the PCF8574A chip.
-    # Create PCF8574 GPIO adapter.
-    try:
-        mcp = PCF8574_GPIO(PCF8574_address)
-    except:
-        try:
-            mcp = PCF8574_GPIO(PCF8574A_address)
-        except:
-            print ('I2C Address Error !')
-            exit(1)
-    
-    lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4,5,6,7], GPIO=mcp)
-
-    with open("../assets/magna-carta.txt", "r") as f:
-        text = f.read()
-        for i in range(0, len(text), 16):
-            line = text[i:i+16]
-            lcd.clear()
-            lcd.setCursor(0,0)
-            lcd.message(line)
-            sleep(1)
-
     listen_keyboard(
         on_press=on_press,
         on_release=on_release
     )
+
+    # PCF8574_address = 0x27  # I2C address of the PCF8574 chip.
+    # PCF8574A_address = 0x3F  # I2C address of the PCF8574A chip.
+    # # Create PCF8574 GPIO adapter.
+    # try:
+    #     mcp = PCF8574_GPIO(PCF8574_address)
+    # except:
+    #     try:
+    #         mcp = PCF8574_GPIO(PCF8574A_address)
+    #     except:
+    #         print ('I2C Address Error !')
+    #         exit(1)
+    
+    # lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4,5,6,7], GPIO=mcp)
+
+    # with open("../assets/magna-carta.txt", "r") as f:
+    #     text = f.read()
+    #     for i in range(0, len(text), 16):
+    #         line = text[i:i+16]
+    #         lcd.clear()
+    #         lcd.setCursor(0,0)
+    #         lcd.message(line)
+    #         sleep(1)
 
 def on_press(key):
     if key == 'w':
