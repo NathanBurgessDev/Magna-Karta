@@ -20,25 +20,20 @@ def main():
 
 def on_press(key):
     if key == 'w':
-        sleep(0.1)
         magna_karta.forward()
     elif key == 's':
-        sleep(0.1)
         magna_karta.backward()
     elif key == 'a':
-        sleep(0.1)
         magna_karta.left()
     elif key == 'd':
-        sleep(0.1)
         magna_karta.right()
     elif key == 'q':
-        sleep(0.1)
         magna_karta.front.close()
         magna_karta.back.close()
         quit()
 
 def on_release(key):
-    # magna_karta.stop()
+    magna_karta.stop()
     pass
 
 def avoid_collision():
