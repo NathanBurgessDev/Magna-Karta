@@ -1,4 +1,5 @@
 from gpiozero import Robot
+from time import sleep
 
 class MagnaKartaController:
     
@@ -11,15 +12,24 @@ class MagnaKartaController:
         self.back.forward(self.speed)
         self.front.forward(self.speed)
 
+
     def backward(self):
         self.back.backward(self.speed)
         self.front.backward(self.speed)
 
+
     def left(self):
         self.back.left(self.speed)
         self.front.left(self.speed)
+
     
     def right(self):
         self.back.right(self.speed)
         self.front.right(self.speed)
+
+
+    def stop(self):
+        self.back.stop()
+        self.front.stop()
+
 
