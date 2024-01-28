@@ -13,6 +13,8 @@
 		1AC2CA682B6572A100B744C1 /* KartControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC2CA672B6572A100B744C1 /* KartControls.swift */; };
 		1AC2CA6B2B657E8000B744C1 /* Leather.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1AC2CA6A2B657E8000B744C1 /* Leather.metal */; };
 		1AC2CA6D2B657EEE00B744C1 /* Leather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC2CA6C2B657EEE00B744C1 /* Leather.swift */; };
+		1AC2CA702B65BD0F00B744C1 /* MoveRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC2CA6F2B65BD0F00B744C1 /* MoveRepository.swift */; };
+		1AC2CA722B65C93300B744C1 /* MockMoveRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC2CA712B65C93300B744C1 /* MockMoveRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		1AC2CA672B6572A100B744C1 /* KartControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartControls.swift; sourceTree = "<group>"; };
 		1AC2CA6A2B657E8000B744C1 /* Leather.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Leather.metal; sourceTree = "<group>"; };
 		1AC2CA6C2B657EEE00B744C1 /* Leather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leather.swift; sourceTree = "<group>"; };
+		1AC2CA6F2B65BD0F00B744C1 /* MoveRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveRepository.swift; sourceTree = "<group>"; };
+		1AC2CA712B65C93300B744C1 /* MockMoveRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMoveRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 		1AC2CA6E2B65992D00B744C1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				1AC2CA6F2B65BD0F00B744C1 /* MoveRepository.swift */,
+				1AC2CA712B65C93300B744C1 /* MockMoveRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -113,6 +119,8 @@
 			dependencies = (
 			);
 			name = MagnaKartaApp;
+			packageProductDependencies = (
+			);
 			productName = MagnaKartaApp;
 			productReference = 1AC2CA552B656B2900B744C1 /* MagnaKartaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +149,8 @@
 				Base,
 			);
 			mainGroup = 1AC2CA4C2B656B2900B744C1;
+			packageReferences = (
+			);
 			productRefGroup = 1AC2CA562B656B2900B744C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,7 +179,9 @@
 			files = (
 				1AC2CA6B2B657E8000B744C1 /* Leather.metal in Sources */,
 				1AC2CA6D2B657EEE00B744C1 /* Leather.swift in Sources */,
+				1AC2CA722B65C93300B744C1 /* MockMoveRepository.swift in Sources */,
 				1AC2CA682B6572A100B744C1 /* KartControls.swift in Sources */,
+				1AC2CA702B65BD0F00B744C1 /* MoveRepository.swift in Sources */,
 				1AC2CA592B656B2900B744C1 /* MagnaKartaAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,5 +13,6 @@ struct MagnaKartaAppApp: App {
         WindowGroup {
             KartControls()
         }
+        .environment(MoveRepository())
     }
 }
