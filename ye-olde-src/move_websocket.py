@@ -7,6 +7,10 @@ controller = MagnaKartaController(speed=0.5)
 
 async def echo(websocket):
     async for message in websocket:
+        if message == "stop":
+            controller.stop()
+            return
+
         (x_str, y_str) = message.split(",")
 
         x = float(x_str)
