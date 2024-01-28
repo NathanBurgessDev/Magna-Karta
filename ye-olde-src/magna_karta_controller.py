@@ -36,4 +36,7 @@ class MagnaKartaController:
         self.back.stop()
         self.front.stop()
 
+    # def stop(self):
+    #     self
+
 

@@ -1,7 +1,7 @@
 from sensor import SensorController
 from magna_karta_controller import MagnaKartaController
 from signal import pause
-import keyboard
+from pynput.keyboard import Listener
 from time import sleep
 
 magna_karta = MagnaKartaController(speed=1)
@@ -12,32 +12,38 @@ def main():
     #    out_of_range_cb=forward
     # )
     # pause()
-    while True:
+
+    with Listener(on_press, on_release) as listener:
+        listener.join()
+
+    # while True:
         # try:
-            if keyboard.is_pressed('w'):
-                keyboard.release('w')
-                sleep(0.1)
-                magna_karta.forward()
-            elif keyboard.is_pressed('s'):
-                keyboard.release('s')
-                sleep(0.1)
-                magna_karta.backward()
-            elif keyboard.is_pressed('a'):
-                keyboard.release('a')
-                sleep(0.1)
-                magna_karta.left()
-            elif keyboard.is_pressed('d'):
-                keyboard.release('d')
-                sleep(0.1)
-                magna_karta.right()
-            elif keyboard.is_pressed('q'):
-                keyboard.release('q')
-                sleep(0.1)
-                magna_karta.front.close()
-                magna_karta.back.close()
-                quit()
+
         # except:
         #     continue
+
+def on_press(key):
+    if key.char == 'w':
+        sleep(0.1)
+        magna_karta.forward()
+    elif key.char == 's':
+        sleep(0.1)
+        magna_karta.backward()
+    elif key.char == 'a':
+        sleep(0.1)
+        magna_karta.left()
+    elif key.char == 'd':
+        sleep(0.1)
+        magna_karta.right()
+    elif key.char == 'q':
+        sleep(0.1)
+        magna_karta.front.close()
+        magna_karta.back.close()
+        quit()
+
+def on_release(key):
+    # magna_karta.stop()
+    pass
 
 def avoid_collision():
     global magna_karta
