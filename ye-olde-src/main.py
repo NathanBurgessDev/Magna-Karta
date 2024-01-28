@@ -10,6 +10,7 @@ def main():
     #    out_of_range_cb=forward
     # )
     # pause()
+    
     magna_karta.forward()
 
 def avoid_collision():

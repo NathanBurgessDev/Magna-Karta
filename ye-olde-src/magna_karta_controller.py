@@ -4,7 +4,7 @@ class MagnaKartaController:
     
     def __init__(self, speed: float) -> None:
         self.back = Robot(left=(17, 27), right=(23, 22))
-        self.front = Robot(left=(4, 14), right=(15, 18))
+        self.front = Robot(left=(4, 14), right=(18, 15))
         self.speed = speed
 
     def forward(self):
