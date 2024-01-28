@@ -12,7 +12,6 @@ def main():
     # )
     # pause()
     while True:
-        key = input()
         try:
             if keyboard.is_pressed('w'):
                 print("forward")
